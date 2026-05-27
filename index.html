@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notebook Laptops - Toshkent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* ===== O'ZGARUVCHILAR ===== */
+        :root {
+            --ko: #1565C0;        /* Ko'k - asosiy rang */
+            --ko-yorug: #1976D2;
+            --ko-toq: #0D47A1;
+            --yashil: #2E7D32;
+            --qizil: #C62828;
+            --sariq: #F9A825;
+            --oq: #FFFFFF;
+            --kulrang: #F5F7FA;
+            --matn: #1A1A2E;
+            --matn2: #555;
+            --chegara: #E0E7FF;
+            --soya: 0 4px 24px rgba(21,101,192,0.10);
+            --radius: 14px;
+            --font: 'Exo 2', sans-serif;
+        }
+ 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font); background: #F0F4FF; color: var(--matn); overflow-x: hidden; }
+ 
+        /* ===== TOPBAR ===== */
+        .topbar {
+            background: var(--ko-toq);
+            padding: 7px 0;
+            font-size: 13px;
+            color: rgba(255,255,255,0.9);
+        }
+        .topbar-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .topbar-phones { display: flex; gap: 20px; align-items: center; }
+        .topbar-phones a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: color .2s;
+        }
+        .topbar-phones a:hover { color: var(--sariq); }
+        .topbar-phones i { margin-right: 5px; color: var(--sariq); }
+        .topbar-address { display: flex; align-items: center; gap: 7px; font-size: 12.5px; }
+        .topbar-address i { color: var(--sariq); }
+        .topbar-lang { display: flex; gap: 6px; }
+        .lang-btn {
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all .2s;
+            font-family: var(--font);
+        }
+        .lang-btn:hover, .lang-btn.faol { background: var(--sariq); color: var(--ko-toq); border-color: var(--sariq); font-weight: 700; }
+ 
+        /* ===== HEADER ===== */
+        .header {
+            background: var(--oq);
+            box-shadow: 0 2px 20px rgba(21,101,192,0.10);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid var(--ko);
+            object-fit: contain;
+            padding: 3px;
+            background: #fff;
+        }
+        .logo-matn { line-height: 1.1; }
+        .logo-matn .ism { font-size: 19px; font-weight: 800; color: var(--ko-toq); letter-spacing: -0.5px; }
+        .logo-matn .tagline { font-size: 11px; color: var(--matn2); font-weight: 400; }
+ 
+        /* Qidiruv */
+        .qidiruv-wrap { flex: 1; max-width: 600px; position: relative; }
+        .qidiruv-input {
+            width: 100%;
+            padding: 13px 50px 13px 20px;
+            border: 2px solid var(--chegara);
+            border-radius: 30px;
+            font-size: 15px;
+            font-family: var(--font);
+            background: var(--kulrang);
+            color: var(--matn);
+            outline: none;
+            transition: border .2s, box-shadow .2s;
+        }
+        .qidiruv-input:focus { border-color: var(--ko); box-shadow: 0 0 0 4px rgba(21,101,192,0.08); background: #fff; }
+        .qidiruv-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--ko);
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            color: #fff;
+            cursor: pointer;
+            transition: background .2s;
+            font-size: 15px;
+        }
+        .qidiruv-btn:hover { background: var(--ko-toq); }
+ 
+        /* Header tugmalar */
+        .header-actions { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+        .kirish-btn {
+            padding: 10px 22px;
+            background: var(--ko);
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            font-size: 14px;
+            font-family: var(--font);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all .2s;
+            white-space: nowrap;
+        }
+        .kirish-btn:hover { background: var(--ko-toq); transform: translateY(-1px); }
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--kulrang);
+            padding: 8px 16px;
+            border-radius: 25px;
+            border: 1px solid var(--chegara);
+        }
+        .user-avatar {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--ko);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+        }
+ 
+        /* ===== NAV ===== */
+        .nav {
+            background: var(--ko);
+        }
+        .nav-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 0;
+            overflow-x: auto;
+        }
+        .nav-link {
+            padding: 14px 22px;
+            color: rgba(255,255,255,0.88);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all .2s;
+            border-bottom: 3px solid transparent;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+        .nav-link:hover, .nav-link.faol { color: #fff; border-bottom-color: var(--sariq); background: rgba(255,255,255,0.08); }
+ 
+        /* ===== HERO BANNER ===== */
+        .hero {
+            background: linear-gradient(160deg, #f8f9ff 0%, #eef2ff 50%, #e8f0ff 100%);
+            padding: 60px 20px 40px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid #dde5ff;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: -60px; right: -60px;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(21,101,192,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            position: relative;
+        }
+        .hero-matn h1 {
+            font-size: clamp(26px, 3.5vw, 44px);
+            font-weight: 800;
+            color: var(--matn);
+            line-height: 1.2;
+            margin-bottom: 14px;
+        }
+        .hero-matn h1 span { color: var(--ko); }
+        .hero-matn p { font-size: 15px; color: var(--matn2); margin-bottom: 28px; line-height: 1.6; }
+        .hero-tugmalar { display: flex; gap: 14px; flex-wrap: wrap; }
+        .btn-asosiy {
+            padding: 14px 32px;
+            background: var(--ko);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all .2s;
+            font-family: var(--font);
+            box-shadow: 0 6px 20px rgba(21,101,192,0.3);
+        }
+        .btn-asosiy:hover { background: var(--ko-toq); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(21,101,192,0.4); }
+        .btn-ikkinchi {
+            padding: 14px 32px;
+            background: #fff;
+            color: var(--ko);
+            border: 2px solid var(--ko);
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all .2s;
+            font-family: var(--font);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-ikkinchi:hover { background: var(--ko); color: #fff; }
+ 
+        /* Hero right - yangi ikonka dizayn (2-rasmdagi kabi) */
+        .hero-right {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            max-width: 640px;
+            width: 100%;
+        }
+        .hero-icon-group {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            flex-shrink: 0;
+        }
+        .hero-icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            text-align: center;
+        }
+        .hero-icon-circle {
+            width: 80px;
+            height: 80px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 30px rgba(21,101,192,0.14);
+            border: 2px solid rgba(21,101,192,0.08);
+            transition: transform .2s;
+        }
+        .hero-icon-circle:hover { transform: scale(1.06); }
+        .hero-icon-label {
+            font-size: 13px;
+            font-weight: 700;
+            color: #1565C0;
+            white-space: nowrap;
+        }
+        .hero-laptop-center {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: suzish 4s ease-in-out infinite;
+        }
+ 
+        @keyframes suzish { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+ 
+        /* ===== BRENDLAR ===== */
+        .brendlar {
+            background: #fff;
+            padding: 40px 20px;
+            border-bottom: 1px solid var(--chegara);
+        }
+        .section-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--ko-toq);
+            margin-bottom: 30px;
+        }
+        .section-title span { color: var(--ko); }
+        .brendlar-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .brend-karta {
+            padding: 16px 26px;
+            border: 2px solid var(--chegara);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all .22s;
+            background: #fff;
+            min-width: 100px;
+        }
+        .brend-karta:hover { border-color: var(--ko); box-shadow: 0 4px 16px rgba(21,101,192,0.12); transform: translateY(-3px); }
+        .brend-karta.faol { border-color: var(--ko); background: #EFF6FF; }
+        .brend-logo { font-size: 26px; font-weight: 800; }
+        .brend-karta span { font-size: 12px; color: var(--matn2); }
+        .brend-logo-img { display: flex; align-items: center; justify-content: center; height: 36px; }
+        .b-tplink .brend-logo-img img { filter: none; }
+        .b-tplink:hover { border-color: #4CAF50; }
+        .b-tplink.faol { border-color: #4CAF50; background: #F1F8E9; }
+ 
+        /* Brend ranglari */
+        .b-hp .brend-logo { color: #0096D6; }
+        .b-dell .brend-logo { color: #007DB8; }
+        .b-asus .brend-logo { color: #1A1A1A; }
+        .b-lenovo .brend-logo { color: #E2231A; }
+        .b-acer .brend-logo { color: #83B81A; }
+        .b-msi .brend-logo { color: #C8102E; }
+ 
+        /* ===== NOTEBOOKLAR ===== */
+        .notebooklar { padding: 48px 20px; }
+        .notebooklar-inner { max-width: 1280px; margin: 0 auto; }
+        .filtr-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .saralash-select {
+            padding: 10px 18px;
+            border: 2px solid var(--chegara);
+            border-radius: 25px;
+            font-family: var(--font);
+            font-size: 14px;
+            background: #fff;
+            color: var(--matn);
+            outline: none;
+            cursor: pointer;
+        }
+ 
+        /* Notebook kartalar */
+        .notebook-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 22px;
+        }
+        .notebook-karta {
+            background: #fff;
+            border-radius: var(--radius);
+            box-shadow: var(--soya);
+            overflow: hidden;
+            transition: all .25s;
+            border: 1px solid var(--chegara);
+            cursor: pointer;
+        }
+        .notebook-karta:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(21,101,192,0.15); border-color: var(--ko); }
+        .notebook-rasm-wrap {
+            width: 100%;
+            height: 190px;
+            background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .notebook-rasm {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 15px;
+            transition: transform .3s;
+        }
+        .notebook-karta:hover .notebook-rasm { transform: scale(1.05); }
+        .notebook-rasm-placeholder {
+            font-size: 80px;
+            opacity: 0.3;
+        }
+        .brend-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--ko);
+            color: #fff;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+        .notebook-body { padding: 16px; }
+        .notebook-nomi {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--matn);
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .notebook-specs {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin-bottom: 14px;
+        }
+        .spec-qator {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12.5px;
+            color: var(--matn2);
+        }
+        .spec-qator i { color: var(--ko); width: 14px; flex-shrink: 0; }
+        .notebook-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 12px;
+            border-top: 1px solid var(--chegara);
+        }
+        .narxi {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--ko-toq);
+        }
+        .narxi span { font-size: 13px; font-weight: 500; color: var(--matn2); }
+        .sotib-olish {
+            padding: 9px 18px;
+            background: var(--ko);
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all .2s;
+            font-family: var(--font);
+        }
+        .sotib-olish:hover { background: var(--ko-toq); transform: translateY(-1px); }
+ 
+        /* ===== MODAL ===== */
+        .modal-fon {
+            position: fixed;
+            inset: 0;
+            background: rgba(10,30,70,0.6);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .25s;
+        }
+        .modal-fon.ochiq { opacity: 1; pointer-events: all; }
+        .modal {
+            background: #fff;
+            border-radius: 20px;
+            max-width: 460px;
+            width: 100%;
+            padding: 36px;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform .25s;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+        .modal-fon.ochiq .modal { transform: translateY(0); }
+        .modal-yopish {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--kulrang);
+            border: none;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            color: var(--matn2);
+            transition: all .2s;
+        }
+        .modal-yopish:hover { background: #fee2e2; color: var(--qizil); }
+        .modal h2 { font-size: 22px; font-weight: 800; color: var(--ko-toq); margin-bottom: 8px; }
+        .modal p { font-size: 14px; color: var(--matn2); margin-bottom: 24px; }
+        .form-guruh { margin-bottom: 16px; }
+        .form-label { display: block; font-size: 13px; font-weight: 600; color: var(--matn); margin-bottom: 6px; }
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--chegara);
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: var(--font);
+            color: var(--matn);
+            outline: none;
+            transition: border .2s;
+            background: var(--kulrang);
+        }
+        .form-input:focus { border-color: var(--ko); background: #fff; }
+        .form-submit {
+            width: 100%;
+            padding: 14px;
+            background: var(--ko);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all .2s;
+            font-family: var(--font);
+            margin-top: 8px;
+        }
+        .form-submit:hover { background: var(--ko-toq); transform: translateY(-1px); }
+        .tab-tugmalar { display: flex; gap: 8px; margin-bottom: 24px; }
+        .tab-btn {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid var(--chegara);
+            background: #fff;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all .2s;
+            font-family: var(--font);
+            color: var(--matn2);
+        }
+        .tab-btn.faol { background: var(--ko); color: #fff; border-color: var(--ko); }
+ 
+        /* Xabar toast */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 3000;
+            padding: 16px 24px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transform: translateX(120%);
+            transition: transform .3s cubic-bezier(.4,0,.2,1);
+            max-width: 360px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        .toast.ko'rinsin { transform: translateX(0); }
+        .toast.muvaffaq { background: #d1fae5; color: #065f46; border: 1px solid #a7f3d0; }
+        .toast.xato { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+ 
+        /* ===== NOTEBOOK DETAIL MODAL ===== */
+        .detail-modal { max-width: 700px; }
+        .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .detail-rasm-wrap {
+            background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 220px;
+            font-size: 100px;
+            opacity: 0.4;
+        }
+        .detail-rasm { width: 100%; border-radius: 12px; object-fit: contain; max-height: 250px; }
+        .detail-specs { display: flex; flex-direction: column; gap: 10px; }
+        .detail-spec { display: flex; align-items: flex-start; gap: 10px; padding: 10px; background: var(--kulrang); border-radius: 8px; }
+        .detail-spec i { color: var(--ko); margin-top: 2px; flex-shrink: 0; }
+        .detail-spec-matn { font-size: 13px; }
+        .detail-spec-matn strong { display: block; font-size: 11px; color: var(--matn2); font-weight: 500; margin-bottom: 2px; }
+ 
+        /* ===== FOOTER ===== */
+        .footer { background: var(--ko-toq); color: rgba(255,255,255,0.8); padding: 40px 20px 20px; margin-top: 60px; }
+        .footer-inner { max-width: 1280px; margin: 0 auto; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; margin-bottom: 30px; }
+        .footer-col h3 { color: #fff; font-size: 16px; font-weight: 700; margin-bottom: 14px; }
+        .footer-col a { display: block; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; margin-bottom: 8px; transition: color .2s; }
+        .footer-col a:hover { color: var(--sariq); }
+        .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0; }
+        .footer-bottom { text-align: center; font-size: 13px; color: rgba(255,255,255,0.5); }
+ 
+        /* Yuklanish animatsiyasi */
+        .yuklanyapti {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--matn2);
+            font-size: 16px;
+        }
+        .spinner { 
+            width: 40px; height: 40px; 
+            border: 4px solid var(--chegara); 
+            border-top-color: var(--ko); 
+            border-radius: 50%; 
+            animation: aylanish 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+        @keyframes aylanish { to { transform: rotate(360deg); } }
+        @keyframes popIn { 0% { transform: scale(0.7); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+        @keyframes scaleIn { 0% { transform: scale(0); } 60% { transform: scale(1.15); } 100% { transform: scale(1); } }
+ 
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-right { flex-direction: column; gap: 10px; }
+            .hero-icon-group { flex-direction: row; gap: 16px; }
+            .hero-icon-circle { width: 56px; height: 56px; }
+            .hero-icon-label { font-size: 11px; }
+            .detail-grid { grid-template-columns: 1fr; }
+            .topbar-address { display: none; }
+        }
+    </style>
+</head>
+<body>
+ 
+<!-- TOPBAR -->
+<div class="topbar">
+    <div class="topbar-inner">
+        <div class="topbar-phones">
+            <a href="tel:+998981232225"><i class="fas fa-phone"></i>+998 98 123-22-25</a>
+            <a href="tel:+998983681177"><i class="fas fa-phone"></i>+998 98 368-11-77</a>
+        </div>
+        <div class="topbar-address">
+            <i class="fas fa-map-marker-alt"></i>
+            <span data-t="address">Toshkent shahar, Malika bozori B20 va B13 dokon</span>
+        </div>
+        <div class="topbar-lang">
+            <button class="lang-btn faol" onclick="tilOzgartir('uz')">UZ</button>
+            <button class="lang-btn" onclick="tilOzgartir('ru')">RU</button>
+            <button class="lang-btn" onclick="tilOzgartir('en')">EN</button>
+        </div>
+    </div>
+</div>
+ 
+<!-- HEADER -->
+<header class="header">
+    <div class="header-inner">
+        <!-- LOGO -->
+        <a class="logo" href="/">
+            <div style="width:60px;height:60px;border-radius:50%;border:3px solid #1565C0;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;padding:2px;">
+                <!-- SVG Logo - Notebook Laptops logosi -->
+                <svg viewBox="0 0 100 100" width="54" height="54" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="#1565C0" stroke-width="0"/>
+                    <!-- Rang yoylari -->
+                    <path d="M50 8 A42 42 0 0 1 92 50" fill="none" stroke="#F9A825" stroke-width="11" stroke-linecap="round"/>
+                    <path d="M92 50 A42 42 0 0 1 50 92" fill="none" stroke="#C62828" stroke-width="11" stroke-linecap="round"/>
+                    <path d="M50 92 A42 42 0 0 1 8 50" fill="none" stroke="#1565C0" stroke-width="11" stroke-linecap="round"/>
+                    <path d="M8 50 A42 42 0 0 1 50 8" fill="none" stroke="#2E7D32" stroke-width="11" stroke-linecap="round"/>
+                    <!-- Laptop -->
+                    <rect x="28" y="32" width="44" height="30" rx="4" fill="#1A1A2E"/>
+                    <rect x="31" y="35" width="38" height="24" rx="2" fill="#fff"/>
+                    <rect x="22" y="62" width="56" height="6" rx="3" fill="#1A1A2E"/>
+                    <rect x="40" y="63" width="20" height="3" rx="1.5" fill="#555"/>
+                </svg>
+            </div>
+            <div class="logo-matn">
+                <div class="ism">Notebook Laptops</div>
+                <div class="tagline" data-t="tagline">Toshkent yetakchi notebook do'koni</div>
+            </div>
+        </a>
+ 
+        <!-- QIDIRUV -->
+        <div class="qidiruv-wrap">
+            <input class="qidiruv-input" type="text" id="qidiruvInput" 
+                   data-placeholder-t="search_placeholder" placeholder="Notebook qidirish...">
+            <button class="qidiruv-btn" onclick="qidiruv()"><i class="fas fa-search"></i></button>
+        </div>
+ 
+        <!-- KIRISH/USER -->
+        <div class="header-actions">
+            <div id="userPanel" style="display:none">
+                <div class="user-info">
+                    <div class="user-avatar" id="userAvatar">U</div>
+                    <span id="userName">Foydalanuvchi</span>
+                    <button onclick="chiqish()" style="background:none;border:none;cursor:pointer;color:var(--matn2);font-size:13px;" data-t="logout">Chiqish</button>
+                </div>
+            </div>
+            <button id="kirishBtn" class="kirish-btn" onclick="modalOch('authModal')" data-t="login_btn">Kirish / Ro'yxat</button>
+        </div>
+    </div>
+</header>
+ 
+<!-- NAVIGATSIYA -->
+<nav class="nav">
+    <div class="nav-inner">
+        <a class="nav-link faol" href="#" onclick="brendFilter('')" data-t="nav_all"><i class="fas fa-th-large"></i><span>Hammasi</span></a>
+        <a class="nav-link" href="#" onclick="brendFilter('HP')"><i class="fas fa-laptop"></i><span>Ноутбукlar</span></a>
+        <a class="nav-link" href="#" onclick="brendFilter('gaming')"><i class="fas fa-gamepad"></i><span data-t="nav_gaming">Gaming</span></a>
+        <a class="nav-link" href="#" onclick="brendFilter('Lenovo')"><i class="fas fa-bolt"></i><span data-t="nav_ultra">Ultrabooklar</span></a>
+        <a class="nav-link" href="#" onclick="brendFilter('ASUS')"><i class="fas fa-exchange-alt"></i><span>2-in-1</span></a>
+        <a class="nav-link" href="#" onclick="kategoriyaFilter('wifi')"><i class="fas fa-wifi"></i><span>Wi-Fi</span></a>
+        <a class="nav-link" href="#" onclick="kategoriyaFilter('aksessuarlar')"><i class="fas fa-headphones"></i><span>Aksessuarlar</span></a>
+        <a class="nav-link" href="#" onclick="window.location='#brendlar'"><i class="fas fa-tags"></i><span data-t="nav_brands">Brendlar</span></a>
+        <a class="nav-link" href="#" onclick="window.location='#kontakt'"><i class="fas fa-map-marker-alt"></i><span data-t="nav_contact">Kontakt</span></a>
+    </div>
+</nav>
+ 
+<!-- HERO BANNER -->
+<section class="hero">
+    <div class="hero-inner">
+        <div class="hero-matn">
+            <h1 data-t="hero_title">Eng yaxshi <span>Notebook</span> va <span>Laptop</span>lar Toshkentda!</h1>
+            <p data-t="hero_desc">HP, Dell, ASUS, Lenovo, Acer, MSI - barcha yetakchi brendlar bizda. Kafolat va yetkazib berish xizmati.</p>
+            <div class="hero-tugmalar">
+                <button class="btn-asosiy" onclick="document.getElementById('notebooklar').scrollIntoView({behavior:'smooth'})" data-t="hero_btn1">
+                    <i class="fas fa-laptop"></i> Katalogni ko'rish
+                </button>
+                <a href="tel:+998981232225" class="btn-ikkinchi">
+                    <i class="fas fa-phone"></i> <span data-t="hero_btn2">Qo'ng'iroq qilish</span>
+                </a>
+            </div>
+        </div>
+        <!-- O'NG TOMON: 2-rasmdagi ko'rinish -->
+        <div class="hero-right">
+ 
+            <!-- Chap ikonkalar -->
+            <div class="hero-icon-group left-icons">
+                <div class="hero-icon-item">
+                    <div class="hero-icon-circle">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 3C9.716 3 3 9.716 3 18s6.716 15 15 15 15-6.716 15-15S26.284 3 18 3zm-2 21.414-5.707-5.707 1.414-1.414L16 21.586l8.293-8.293 1.414 1.414L16 24.414z" fill="#1565C0"/></svg>
+                    </div>
+                    <span class="hero-icon-label">Kafolat</span>
+                </div>
+                <div class="hero-icon-item">
+                    <div class="hero-icon-circle">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="3" y="7" width="26" height="18" rx="3" stroke="#1565C0" stroke-width="2.5" fill="none"/><path d="M7 22l4-8 4 5 3-4 4 7" stroke="#1565C0" stroke-width="2" stroke-linecap="round"/><path d="M33 12h-4v12h4" stroke="#1565C0" stroke-width="2.5" stroke-linecap="round"/><circle cx="31" cy="29" r="3" fill="#1565C0"/><circle cx="8" cy="29" r="3" fill="#1565C0"/><path d="M3 25h26" stroke="#1565C0" stroke-width="2"/></svg>
+                    </div>
+                    <span class="hero-icon-label">Tez yetkazib berish</span>
+                </div>
+            </div>
+ 
+            <!-- Markaziy notebook SVG -->
+            <div class="hero-laptop-center">
+                <svg viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg" width="100%" style="max-width:460px;">
+                    <defs>
+                        <!-- Ko'k to'lqin gradient - ekran uchun -->
+                        <linearGradient id="screenBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#1565C0"/>
+                            <stop offset="50%" stop-color="#1976D2"/>
+                            <stop offset="100%" stop-color="#42A5F5"/>
+                        </linearGradient>
+                        <!-- To'lqin effekti -->
+                        <linearGradient id="wave1" x1="0%" y1="100%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="rgba(255,255,255,0.0)"/>
+                            <stop offset="50%" stop-color="rgba(100,180,255,0.4)"/>
+                            <stop offset="100%" stop-color="rgba(255,255,255,0.15)"/>
+                        </linearGradient>
+                        <linearGradient id="wave2" x1="100%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="rgba(255,255,255,0.2)"/>
+                            <stop offset="100%" stop-color="rgba(21,101,192,0.0)"/>
+                        </linearGradient>
+                        <!-- Laptop tana -->
+                        <linearGradient id="bodyTop" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#d4d8dc"/>
+                            <stop offset="100%" stop-color="#b0b6bc"/>
+                        </linearGradient>
+                        <linearGradient id="bodyBot" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#c8cdd2"/>
+                            <stop offset="100%" stop-color="#9ea5ac"/>
+                        </linearGradient>
+                        <!-- Podium -->
+                        <linearGradient id="podium" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#f0f0f0"/>
+                            <stop offset="100%" stop-color="#d8d8d8"/>
+                        </linearGradient>
+                        <filter id="ls" x="-5%" y="-5%" width="110%" height="130%">
+                            <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="rgba(21,101,192,0.20)"/>
+                        </filter>
+                    </defs>
+ 
+                    <!-- Podium (pastki platforma) -->
+                    <ellipse cx="250" cy="345" rx="195" ry="28" fill="url(#podium)" opacity="0.7"/>
+                    <ellipse cx="250" cy="340" rx="185" ry="20" fill="#e8e8e8" opacity="0.5"/>
+ 
+                    <g filter="url(#ls)">
+                        <!-- === LAPTOP LID (Qopqoq - 3D perspektiv) === -->
+                        <!-- Tashqi ramka - kulrang metall -->
+                        <path d="M85 45 Q88 35 100 32 L390 32 Q404 32 408 45 L408 270 Q408 282 395 285 L95 285 Q82 285 80 272 Z" 
+                              fill="url(#bodyTop)" stroke="#a0a8b0" stroke-width="1.5"/>
+                        
+                        <!-- Qora bezel (ekran ramkasi) -->
+                        <path d="M95 48 L395 48 Q402 48 404 55 L404 268 Q404 275 397 278 L93 278 Q86 278 86 271 L86 55 Q86 48 95 48 Z" 
+                              fill="#1a1f26"/>
+                        
+                        <!-- === EKRAN - KO'K TO'LQIN === -->
+                        <clipPath id="screenClip">
+                            <rect x="96" y="56" width="298" height="214" rx="4"/>
+                        </clipPath>
+                        <rect x="96" y="56" width="298" height="214" rx="4" fill="url(#screenBg)"/>
+                        
+                        <!-- To'lqin 1 -->
+                        <path d="M96 160 Q150 110 200 145 Q255 185 310 130 Q360 85 394 120 L394 270 L96 270 Z" 
+                              fill="rgba(255,255,255,0.12)" clip-path="url(#screenClip)"/>
+                        <!-- To'lqin 2 -->
+                        <path d="M96 200 Q170 155 230 185 Q290 220 350 170 Q380 148 394 160 L394 270 L96 270 Z" 
+                              fill="rgba(255,255,255,0.08)" clip-path="url(#screenClip)"/>
+                        <!-- Yaltiroq diagonal -->
+                        <path d="M96 56 L200 56 L96 160 Z" fill="rgba(255,255,255,0.08)" clip-path="url(#screenClip)"/>
+                        
+                        <!-- Kamera dot -->
+                        <circle cx="245" cy="52" r="3.5" fill="#2d3748"/>
+                        <circle cx="245" cy="52" r="1.5" fill="#4a5568"/>
+ 
+                        <!-- === KLAVIATURA QISMI === -->
+                        <!-- Pastki tana (hinge) -->
+                        <path d="M75 282 L415 282 L420 295 L70 295 Z" fill="#b8bfc7" stroke="#a0a8b0" stroke-width="1"/>
+                        <!-- Base -->
+                        <path d="M55 295 Q55 330 65 332 L435 332 Q445 330 445 295 Z" fill="url(#bodyBot)" stroke="#9ea5ac" stroke-width="1.5"/>
+                        <!-- Klaviatura maydoni -->
+                        <rect x="75" y="300" width="340" height="24" rx="4" fill="#1a1f26" opacity="0.15"/>
+                        <!-- Klaviatura qatorlari -->
+                        <rect x="80" y="303" width="330" height="5" rx="2" fill="#8892a0" opacity="0.6"/>
+                        <rect x="82" y="311" width="326" height="5" rx="2" fill="#8892a0" opacity="0.5"/>
+                        <rect x="90" y="319" width="230" height="5" rx="2" fill="#8892a0" opacity="0.4"/>
+                        <!-- Touchpad -->
+                        <rect x="193" y="303" width="104" height="22" rx="5" fill="#a0a8b0" opacity="0.7" stroke="#8892a0" stroke-width="0.5"/>
+                    </g>
+                </svg>
+            </div>
+ 
+            <!-- O'ng ikonkalar -->
+            <div class="hero-icon-group right-icons">
+                <div class="hero-icon-item">
+                    <div class="hero-icon-circle">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="13" stroke="#1565C0" stroke-width="2.5" fill="none"/><text x="18" y="23" text-anchor="middle" font-size="14" font-weight="800" fill="#1565C0">%</text></svg>
+                    </div>
+                    <span class="hero-icon-label">Ajoyib narxlar</span>
+                </div>
+                <div class="hero-icon-item">
+                    <div class="hero-icon-circle">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M8 8h4l1 4h14l-2 10H12L10 12H8V8z" stroke="#1565C0" stroke-width="2" fill="none" stroke-linejoin="round"/><path d="M7 6h3" stroke="#1565C0" stroke-width="2" stroke-linecap="round"/><rect x="6" y="6" width="6" height="4" rx="1" stroke="#1565C0" stroke-width="2" fill="none"/><circle cx="14" cy="28" r="2" fill="#1565C0"/><circle cx="24" cy="28" r="2" fill="#1565C0"/><path d="M10 14l1 8h12" stroke="#1565C0" stroke-width="2" stroke-linecap="round"/></svg>
+                    </div>
+                    <span class="hero-icon-label">Bonuslar</span>
+                </div>
+            </div>
+ 
+        </div>
+    </div>
+</section>
+ 
+<!-- BRENDLAR -->
+<section class="brendlar" id="brendlar">
+    <div class="section-title" data-t="brands_title">Yetakchi <span>Brendlar</span></div>
+    <div class="brendlar-grid">
+        <div class="brend-karta b-hp" onclick="brendFilter('HP')">
+            <div class="brend-logo">HP</div>
+            <span>Hewlett-Packard</span>
+        </div>
+        <div class="brend-karta b-dell" onclick="brendFilter('Dell')">
+            <div class="brend-logo">DELL</div>
+            <span>Dell Inc.</span>
+        </div>
+        <div class="brend-karta b-asus" onclick="brendFilter('ASUS')">
+            <div class="brend-logo">ASUS</div>
+            <span>ASUSTeK</span>
+        </div>
+        <div class="brend-karta b-lenovo" onclick="brendFilter('Lenovo')">
+            <div class="brend-logo" style="color:#E2231A;">Lenovo</div>
+            <span>Lenovo Group</span>
+        </div>
+        <div class="brend-karta b-acer" onclick="brendFilter('Acer')">
+            <div class="brend-logo" style="color:#83B81A;">Acer</div>
+            <span>Acer Inc.</span>
+        </div>
+        <div class="brend-karta b-msi" onclick="brendFilter('MSI')">
+            <div class="brend-logo" style="color:#C8102E;">MSI</div>
+            <span>Micro-Star Int.</span>
+        </div>
+        <div class="brend-karta b-tplink" onclick="kategoriyaFilter('wifi')">
+            <div class="brend-logo-img">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/TPLINK_Logo_2.svg/3840px-TPLINK_Logo_2.svg.png" 
+                     alt="TP-Link" style="width:80px;height:28px;object-fit:contain;"
+                     onerror="this.parentNode.innerHTML='<span style=color:#4CAF50;font-weight:800;font-size:18px;>TP-Link</span>'">
+            </div>
+            <span>Wi-Fi Router</span>
+        </div>
+    </div>
+</section>
+ 
+<!-- NOTEBOOKLAR -->
+<section class="notebooklar" id="notebooklar">
+    <div class="notebooklar-inner">
+        <div class="filtr-bar">
+            <div class="section-title" style="margin-bottom:0" data-t="catalog_title">
+                Notebook <span>Katalogi</span>
+                <span id="sonKo'rsatkich" style="font-size:14px;font-weight:500;color:var(--matn2);margin-left:10px;"></span>
+            </div>
+            <select class="saralash-select" onchange="saralash(this.value)">
+                <option value="yangi" data-t="sort_new">Eng yangi</option>
+                <option value="arzon" data-t="sort_cheap">Arzondan qimmatga</option>
+                <option value="qimmat" data-t="sort_exp">Qimmatdan arzonga</option>
+            </select>
+        </div>
+        <div class="notebook-grid" id="notebookGrid">
+            <div class="yuklanyapti">
+                <div class="spinner"></div>
+                <span data-t="loading">Yuklanmoqda...</span>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+<!-- KONTAKT -->
+<section id="kontakt" style="padding:48px 20px;background:#fff;">
+    <div style="max-width:1280px;margin:0 auto;text-align:center;">
+        <div class="section-title" data-t="contact_title">Biz bilan <span>Bog'laning</span></div>
+        <div style="display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin-top:20px;">
+            <div style="background:var(--kulrang);border-radius:16px;padding:28px;min-width:220px;border:1px solid var(--chegara);">
+                <i class="fas fa-phone" style="font-size:28px;color:var(--ko);margin-bottom:12px;display:block;"></i>
+                <strong data-t="phones_label">Telefon raqamlar</strong>
+                <p><a href="tel:+998981232225" style="color:var(--ko);text-decoration:none;">+998 98 123-22-25</a></p>
+                <p><a href="tel:+998983681177" style="color:var(--ko);text-decoration:none;">+998 98 368-11-77</a></p>
+            </div>
+            <div style="background:var(--kulrang);border-radius:16px;padding:28px;min-width:220px;border:1px solid var(--chegara);">
+                <i class="fas fa-map-marker-alt" style="font-size:28px;color:var(--ko);margin-bottom:12px;display:block;"></i>
+                <strong data-t="address_label">Manzil</strong>
+                <p data-t="address">Toshkent shahar, Malika bozori B20 va B13 dokon</p>
+            </div>
+            <div style="background:var(--kulrang);border-radius:16px;padding:28px;min-width:220px;border:1px solid var(--chegara);">
+                <i class="fas fa-clock" style="font-size:28px;color:var(--ko);margin-bottom:12px;display:block;"></i>
+                <strong data-t="hours_label">Ish vaqti</strong>
+                <p data-t="hours">Dushanba - Shanba: 9:00 - 19:00</p>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Notebook Laptops</h3>
+                <p style="font-size:13px;line-height:1.6;" data-t="footer_desc">Toshkentdagi eng ishonchli notebook do'koni. 5 yildan ortiq tajriba.</p>
+            </div>
+            <div class="footer-col">
+                <h3 data-t="footer_catalog">Katalog</h3>
+                <a href="#" onclick="brendFilter('HP')">HP Laptoplar</a>
+                <a href="#" onclick="brendFilter('Dell')">Dell Laptoplar</a>
+                <a href="#" onclick="brendFilter('ASUS')">ASUS Laptoplar</a>
+                <a href="#" onclick="brendFilter('Lenovo')">Lenovo Laptoplar</a>
+            </div>
+            <div class="footer-col">
+                <h3 data-t="footer_contact">Kontakt</h3>
+                <a href="tel:+998981232225">+998 98 123-22-25</a>
+                <a href="tel:+998983681177">+998 98 368-11-77</a>
+                <a href="#" data-t="address">Malika bozori B20, B13</a>
+            </div>
+        </div>
+        <hr class="footer-divider">
+        <div class="footer-bottom">
+            <p>© 2024 Notebook Laptops. <span data-t="footer_rights">Barcha huquqlar himoyalangan.</span></p>
+        </div>
+    </div>
+</footer>
+ 
+<!-- AUTH MODAL -->
+<div class="modal-fon" id="authModal">
+    <div class="modal">
+        <button class="modal-yopish" onclick="modalYop('authModal')">×</button>
+        <h2 data-t="auth_title">Xush kelibsiz! 👋</h2>
+        <p data-t="auth_desc">Zakaz berish uchun tizimga kiring yoki ro'yxatdan o'ting</p>
+        <div class="tab-tugmalar">
+            <button class="tab-btn faol" id="kirishTab" onclick="tabAlmashtir('kirish')" data-t="tab_login">Kirish</button>
+            <button class="tab-btn" id="royxatTab" onclick="tabAlmashtir('royxat')" data-t="tab_register">Ro'yxatdan o'tish</button>
+        </div>
+        
+        <!-- KIRISH FORMASI -->
+        <div id="kirishForma">
+            <div class="form-guruh">
+                <label class="form-label" data-t="phone_label">Telefon raqam</label>
+                <input class="form-input" type="tel" id="kirishTelefon" placeholder="+998901234567">
+            </div>
+            <div class="form-guruh">
+                <label class="form-label" data-t="password_label">Parol</label>
+                <input class="form-input" type="password" id="kirishParol" placeholder="••••••••">
+            </div>
+            <button class="form-submit" onclick="kirishFn()" data-t="login_submit">Kirish</button>
+        </div>
+        
+        <!-- RO'YXAT FORMASI -->
+        <div id="royxatForma" style="display:none">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                <div class="form-guruh">
+                    <label class="form-label" data-t="first_name">Ism</label>
+                    <input class="form-input" type="text" id="royxatIsm" placeholder="Ali">
+                </div>
+                <div class="form-guruh">
+                    <label class="form-label" data-t="last_name">Familya</label>
+                    <input class="form-input" type="text" id="royxatFamilya" placeholder="Valiyev">
+                </div>
+            </div>
+            <div class="form-guruh">
+                <label class="form-label" data-t="phone_label">Telefon raqam</label>
+                <input class="form-input" type="tel" id="royxatTelefon" placeholder="+998901234567">
+            </div>
+            <div class="form-guruh">
+                <label class="form-label" data-t="password_label">Parol</label>
+                <input class="form-input" type="password" id="royxatParol" placeholder="Kamida 6 belgi">
+            </div>
+            <button class="form-submit" onclick="royxatFn()" data-t="register_submit">Ro'yxatdan o'tish</button>
+        </div>
+    </div>
+</div>
+ 
+<!-- NOTEBOOK DETAIL MODAL -->
+<div class="modal-fon" id="detailModal">
+    <div class="modal detail-modal">
+        <button class="modal-yopish" onclick="modalYop('detailModal')">×</button>
+        <div id="detailContent"></div>
+    </div>
+</div>
+ 
+<!-- TOAST XABARLARI -->
+<!-- ZAKAZ MUVAFFAQIYAT MODALI -->
+<div id="zakazMuvaffaqFon" style="display:none;opacity:0;position:fixed;inset:0;background:rgba(10,30,70,0.55);backdrop-filter:blur(4px);z-index:5000;align-items:center;justify-content:center;transition:opacity .3s;">
+    <div style="background:#fff;border-radius:24px;padding:44px 36px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.2);position:relative;animation:popIn .35s cubic-bezier(.4,0,.2,1);">
+        <!-- Yopish tugmasi -->
+        <button onclick="zakazModalYop()" style="position:absolute;top:16px;right:16px;background:#F0F4FF;border:none;width:34px;height:34px;border-radius:50%;font-size:18px;cursor:pointer;color:#666;">×</button>
+        <!-- Animatsiyali belgi -->
+        <div style="width:80px;height:80px;background:linear-gradient(135deg,#22c55e,#16a34a);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;animation:scaleIn .4s .1s both;">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path d="M8 20l9 9 15-16" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <h2 style="font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:10px;">Zakaz qabul qilindi! 🎉</h2>
+        <p style="font-size:15px;color:#555;margin-bottom:6px;">
+            <b id="zakazMahsulotNomi" style="color:#1565C0;"></b>
+        </p>
+        <p style="font-size:14px;color:#555;margin-bottom:24px;">
+            Miqdor: <b id="zakazMiqdor" style="color:#1565C0;"></b> dona
+        </p>
+        <div style="background:#F0FDF4;border:1px solid #86EFAC;border-radius:12px;padding:14px;margin-bottom:24px;">
+            <p style="font-size:14px;color:#166534;font-weight:600;margin:0;">
+                📞 Tez orada siz bilan bog'lanamiz!
+            </p>
+            <p style="font-size:13px;color:#16a34a;margin:4px 0 0;">
+                +998 98 123-22-25 &nbsp;|&nbsp; +998 98 368-11-77
+            </p>
+        </div>
+        <button onclick="zakazModalYop()" style="width:100%;padding:14px;background:linear-gradient(135deg,#1565C0,#1976D2);color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">
+            ✅ Tushunarli, rahmat!
+        </button>
+    </div>
+</div>
+ 
+<div class="toast" id="toast"></div>
+ 
+<script>
+// ===================== TIL SOZLAMALARI =====================
+const TARJIMALAR = {
+    uz: {
+        tagline: "Toshkent yetakchi notebook do'koni",
+        address: "Toshkent shahar, Malika bozori B20 va B13 dokon",
+        search_placeholder: "Notebook qidirish...",
+        login_btn: "Kirish / Ro'yxat",
+        logout: "Chiqish",
+        nav_all: "Hammasi",
+        nav_gaming: "Gaming",
+        nav_ultra: "Ultrabooklar",
+        nav_brands: "Brendlar",
+        nav_contact: "Kontakt",
+        hero_title: "Eng yaxshi <span>Notebook</span> va <span>Laptop</span>lar Toshkentda!",
+        hero_desc: "HP, Dell, ASUS, Lenovo, Acer, MSI - barcha yetakchi brendlar bizda. Kafolat va yetkazib berish xizmati.",
+        hero_btn1: "💻 Katalogni ko'rish",
+        hero_btn2: "Qo'ng'iroq qilish",
+        brands_title: "Yetakchi <span>Brendlar</span>",
+        catalog_title: "Notebook <span>Katalogi</span>",
+        sort_new: "Eng yangi",
+        sort_cheap: "Arzondan qimmatga",
+        sort_exp: "Qimmatdan arzonga",
+        loading: "Yuklanmoqda...",
+        contact_title: "Biz bilan <span>Bog'laning</span>",
+        phones_label: "Telefon raqamlar",
+        address_label: "Manzil",
+        hours_label: "Ish vaqti",
+        hours: "Dushanba - Shanba: 9:00 - 19:00",
+        footer_desc: "Toshkentdagi eng ishonchli notebook do'koni. 5 yildan ortiq tajriba.",
+        footer_catalog: "Katalog",
+        footer_contact: "Kontakt",
+        footer_rights: "Barcha huquqlar himoyalangan.",
+        auth_title: "Xush kelibsiz! 👋",
+        auth_desc: "Zakaz berish uchun tizimga kiring yoki ro'yxatdan o'ting",
+        tab_login: "Kirish",
+        tab_register: "Ro'yxatdan o'tish",
+        phone_label: "Telefon raqam",
+        password_label: "Parol",
+        first_name: "Ism",
+        last_name: "Familya",
+        login_submit: "Kirish",
+        register_submit: "Ro'yxatdan o'tish",
+        buy_btn: "Sotib olish",
+        processor: "Protsessor",
+        ram_label: "Xotira (RAM)",
+        storage: "Disk",
+        screen: "Ekran",
+        graphics: "Grafika",
+        desc_label: "Tavsif",
+        order_btn: "Zakaz berish",
+        login_required: "Zakaz berish uchun tizimga kiring",
+        items_found: "ta mahsulot topildi",
+    },
+    ru: {
+        tagline: "Ведущий магазин ноутбуков в Ташкенте",
+        address: "г. Ташкент, рынок Малика, магазины B20 и B13",
+        search_placeholder: "Поиск ноутбука...",
+        login_btn: "Войти / Регистрация",
+        logout: "Выйти",
+        nav_all: "Все",
+        nav_gaming: "Игровые",
+        nav_ultra: "Ультрабуки",
+        nav_brands: "Бренды",
+        nav_contact: "Контакт",
+        hero_title: "Лучшие <span>Ноутбуки</span> и <span>Лэптопы</span> в Ташкенте!",
+        hero_desc: "HP, Dell, ASUS, Lenovo, Acer, MSI — все ведущие бренды у нас. Гарантия и доставка.",
+        hero_btn1: "💻 Смотреть каталог",
+        hero_btn2: "Позвонить",
+        brands_title: "Ведущие <span>Бренды</span>",
+        catalog_title: "Каталог <span>Ноутбуков</span>",
+        sort_new: "Новые",
+        sort_cheap: "Сначала дешевле",
+        sort_exp: "Сначала дороже",
+        loading: "Загрузка...",
+        contact_title: "Свяжитесь с <span>нами</span>",
+        phones_label: "Номера телефонов",
+        address_label: "Адрес",
+        hours_label: "Время работы",
+        hours: "Пн - Сб: 9:00 - 19:00",
+        footer_desc: "Самый надёжный магазин ноутбуков в Ташкенте. Более 5 лет опыта.",
+        footer_catalog: "Каталог",
+        footer_contact: "Контакт",
+        footer_rights: "Все права защищены.",
+        auth_title: "Добро пожаловать! 👋",
+        auth_desc: "Войдите или зарегистрируйтесь для заказа",
+        tab_login: "Войти",
+        tab_register: "Регистрация",
+        phone_label: "Номер телефона",
+        password_label: "Пароль",
+        first_name: "Имя",
+        last_name: "Фамилия",
+        login_submit: "Войти",
+        register_submit: "Зарегистрироваться",
+        buy_btn: "Купить",
+        processor: "Процессор",
+        ram_label: "Оперативная память",
+        storage: "Диск",
+        screen: "Экран",
+        graphics: "Видеокарта",
+        desc_label: "Описание",
+        order_btn: "Заказать",
+        login_required: "Войдите для оформления заказа",
+        items_found: "товаров найдено",
+    },
+    en: {
+        tagline: "Tashkent's leading laptop store",
+        address: "Tashkent city, Malika market, shops B20 and B13",
+        search_placeholder: "Search laptops...",
+        login_btn: "Login / Register",
+        logout: "Logout",
+        nav_all: "All",
+        nav_gaming: "Gaming",
+        nav_ultra: "Ultrabooks",
+        nav_brands: "Brands",
+        nav_contact: "Contact",
+        hero_title: "Best <span>Notebooks</span> & <span>Laptops</span> in Tashkent!",
+        hero_desc: "HP, Dell, ASUS, Lenovo, Acer, MSI — all leading brands. Warranty and delivery included.",
+        hero_btn1: "💻 Browse catalog",
+        hero_btn2: "Call us",
+        brands_title: "Leading <span>Brands</span>",
+        catalog_title: "Laptop <span>Catalog</span>",
+        sort_new: "Newest",
+        sort_cheap: "Price: Low to High",
+        sort_exp: "Price: High to Low",
+        loading: "Loading...",
+        contact_title: "Contact <span>Us</span>",
+        phones_label: "Phone numbers",
+        address_label: "Address",
+        hours_label: "Working hours",
+        hours: "Monday - Saturday: 9:00 - 19:00",
+        footer_desc: "Tashkent's most trusted laptop store. Over 5 years of experience.",
+        footer_catalog: "Catalog",
+        footer_contact: "Contact",
+        footer_rights: "All rights reserved.",
+        auth_title: "Welcome! 👋",
+        auth_desc: "Login or register to place orders",
+        tab_login: "Login",
+        tab_register: "Register",
+        phone_label: "Phone number",
+        password_label: "Password",
+        first_name: "First name",
+        last_name: "Last name",
+        login_submit: "Login",
+        register_submit: "Register",
+        buy_btn: "Buy now",
+        processor: "Processor",
+        ram_label: "RAM",
+        storage: "Storage",
+        screen: "Screen",
+        graphics: "Graphics",
+        desc_label: "Description",
+        order_btn: "Order now",
+        login_required: "Please login to place an order",
+        items_found: "items found",
+    }
+};
+ 
+let joriyTil = 'uz';
+let barcha_notebooklar = [];
+let joriy_brend = '';
+let joriy_kategoriya = '';
+let user = null;
+ 
+// ===================== TIL =====================
+function tilOzgartir(til) {
+    joriyTil = til;
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('faol'));
+    event.target.classList.add('faol');
+    
+    const t = TARJIMALAR[til];
+    document.querySelectorAll('[data-t]').forEach(el => {
+        const kalit = el.getAttribute('data-t');
+        if (t[kalit] !== undefined) {
+            if (el.tagName === 'INPUT') {
+                el.placeholder = t[kalit];
+            } else {
+                el.innerHTML = t[kalit];
+            }
+        }
+    });
+    
+    // Qidiruv input placeholder
+    const qi = document.getElementById('qidiruvInput');
+    if (qi) qi.placeholder = t.search_placeholder;
+    
+    // Notebooklarni qayta ko'rsatish (tarjima bilan)
+    notebooklarKo_rsat(barcha_notebooklar);
+}
+ 
+function t(kalit) {
+    return TARJIMALAR[joriyTil][kalit] || kalit;
+}
+ 
+// ===================== MODAL =====================
+function modalOch(id) {
+    document.getElementById(id).classList.add('ochiq');
+}
+function modalYop(id) {
+    document.getElementById(id).classList.remove('ochiq');
+}
+ 
+// Modal tashqariga bosilganda yopish
+document.querySelectorAll('.modal-fon').forEach(fon => {
+    fon.addEventListener('click', function(e) {
+        if (e.target === this) modalYop(this.id);
+    });
+});
+ 
+// ===================== AUTH =====================
+function tabAlmashtir(tur) {
+    const kirishForma = document.getElementById('kirishForma');
+    const royxatForma = document.getElementById('royxatForma');
+    const kirishTab = document.getElementById('kirishTab');
+    const royxatTab = document.getElementById('royxatTab');
+    
+    if (tur === 'kirish') {
+        kirishForma.style.display = 'block';
+        royxatForma.style.display = 'none';
+        kirishTab.classList.add('faol');
+        royxatTab.classList.remove('faol');
+    } else {
+        kirishForma.style.display = 'none';
+        royxatForma.style.display = 'block';
+        kirishTab.classList.remove('faol');
+        royxatTab.classList.add('faol');
+    }
+}
+ 
+async function kirishFn() {
+    const telefon = document.getElementById('kirishTelefon').value;
+    const parol = document.getElementById('kirishParol').value;
+    
+    if (!telefon || !parol) { toastKo_rsat('Barcha maydonlarni to\'ldiring', 'xato'); return; }
+    
+    try {
+        const res = await fetch('/kirish', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({telefon, parol})
+        });
+        const data = await res.json();
+        if (data.muvaffaqiyat) {
+            location.reload();
+        } else {
+            toastKo_rsat(data.xato, 'xato');
+        }
+    } catch(e) {
+        toastKo_rsat('Xatolik yuz berdi', 'xato');
+    }
+}
+ 
+async function royxatFn() {
+    const ism = document.getElementById('royxatIsm').value;
+    const familya = document.getElementById('royxatFamilya').value;
+    const telefon = document.getElementById('royxatTelefon').value;
+    const parol = document.getElementById('royxatParol').value;
+    
+    if (!ism || !familya || !telefon || !parol) { toastKo_rsat('Barcha maydonlarni to\'ldiring', 'xato'); return; }
+    if (parol.length < 6) { toastKo_rsat('Parol kamida 6 ta belgi bo\'lishi kerak', 'xato'); return; }
+    
+    try {
+        const res = await fetch('/royxatdan-otish', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ism, familya, telefon, parol})
+        });
+        const data = await res.json();
+        if (data.muvaffaqiyat) {
+            location.reload();
+        } else {
+            toastKo_rsat(data.xato, 'xato');
+        }
+    } catch(e) {
+        toastKo_rsat('Xatolik yuz berdi', 'xato');
+    }
+}
+ 
+function chiqish() {
+    window.location.href = '/chiqish';
+}
+ 
+// ===================== NOTEBOOKLAR =====================
+async function notebooklarYukla(brend = '', qidiruv = '', kategoriya = '') {
+    let url = `/api/notebooklar?brend=${encodeURIComponent(brend)}&q=${encodeURIComponent(qidiruv)}&kategoriya=${encodeURIComponent(kategoriya)}`;
+    try {
+        const res = await fetch(url);
+        barcha_notebooklar = await res.json();
+        notebooklarKo_rsat(barcha_notebooklar);
+    } catch(e) {
+        document.getElementById('notebookGrid').innerHTML = '<p style="text-align:center;color:#999;padding:40px;">Yuklashda xatolik</p>';
+    }
+}
+ 
+function notebooklarKo_rsat(notebooklar) {
+    const grid = document.getElementById('notebookGrid');
+    const son = document.getElementById('sonKo\'rsatkich');
+    
+    if (son) son.textContent = `(${notebooklar.length} ${t('items_found')})`;
+    
+    if (notebooklar.length === 0) {
+        grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:60px;color:#999;font-size:16px;"><i class="fas fa-search" style="font-size:40px;margin-bottom:16px;display:block;opacity:0.3;"></i>Notebook topilmadi</div>';
+        return;
+    }
+    
+    grid.innerHTML = notebooklar.map(n => `
+        <div class="notebook-karta" onclick="detailKo_rsat(${n.id})">
+            <div class="notebook-rasm-wrap">
+                ${n.rasm && n.rasm !== 'default.jpg' && n.rasm !== '' 
+                    ? `<img class="notebook-rasm" src="/static/uploads/${n.rasm}" alt="${n.nomi}" onerror="this.parentNode.innerHTML='<div class=notebook-rasm-placeholder>💻</div>'">` 
+                    : '<div class="notebook-rasm-placeholder">💻</div>'}
+                <span class="brend-tag">${n.brend}</span>
+            </div>
+            <div class="notebook-body">
+                <div class="notebook-nomi">${n.nomi}</div>
+                <div class="notebook-specs">
+                    ${n.protsessor ? `<div class="spec-qator"><i class="fas fa-microchip"></i><span>${n.protsessor}</span></div>` : ''}
+                    ${n.ram ? `<div class="spec-qator"><i class="fas fa-memory"></i><span>${n.ram}</span></div>` : ''}
+                    ${n.disk ? `<div class="spec-qator"><i class="fas fa-hdd"></i><span>${n.disk}</span></div>` : ''}
+                    ${n.ekran ? `<div class="spec-qator"><i class="fas fa-desktop"></i><span>${n.ekran}</span></div>` : ''}
+                </div>
+                <div class="notebook-footer">
+                    <div class="narxi" id="cardNarx_${n.id}">
+                        ${Number(n.narxi).toLocaleString('uz-UZ')} <span style="font-size:13px;font-weight:500;">so'm</span>
+                    </div>
+                    <div onclick="event.stopPropagation()" style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">
+                        <div style="display:flex;align-items:center;border:2px solid #E0E7FF;border-radius:20px;overflow:hidden;background:#fff;">
+                            <button onclick="miqdorOzgartir(${n.id},-1)" style="width:30px;height:30px;border:none;background:#F0F4FF;font-size:18px;font-weight:700;cursor:pointer;color:#1565C0;line-height:1;">−</button>
+                            <span id="miqdor_${n.id}" style="min-width:30px;text-align:center;font-size:14px;font-weight:700;color:#1a1a2e;">1</span>
+                            <button onclick="miqdorOzgartir(${n.id},1)" style="width:30px;height:30px;border:none;background:#F0F4FF;font-size:18px;font-weight:700;cursor:pointer;color:#1565C0;line-height:1;">+</button>
+                        </div>
+                        <button class="sotib-olish" onclick="zakazBer(${n.id},'${n.nomi.replace(/'/g,"\'")}')">
+                            <i class="fas fa-shopping-cart"></i> ${t('buy_btn')}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+ 
+async function detailKo_rsat(id) {
+    try {
+        const res = await fetch(`/api/notebook/${id}`);
+        const n = await res.json();
+        
+        document.getElementById('detailContent').innerHTML = `
+            <h2 style="font-size:20px;font-weight:800;color:var(--ko-toq);margin-bottom:20px;">${n.nomi}</h2>
+            <div class="detail-grid">
+                <div class="detail-rasm-wrap">
+                    ${n.rasm && n.rasm !== 'default.jpg' && n.rasm !== '' 
+                        ? `<img class="detail-rasm" src="/static/uploads/${n.rasm}" alt="${n.nomi}">` 
+                        : '💻'}
+                </div>
+                <div class="detail-specs">
+                    ${n.protsessor ? `<div class="detail-spec"><i class="fas fa-microchip"></i><div class="detail-spec-matn"><strong>${t('processor')}</strong>${n.protsessor}</div></div>` : ''}
+                    ${n.ram ? `<div class="detail-spec"><i class="fas fa-memory"></i><div class="detail-spec-matn"><strong>${t('ram_label')}</strong>${n.ram}</div></div>` : ''}
+                    ${n.disk ? `<div class="detail-spec"><i class="fas fa-hdd"></i><div class="detail-spec-matn"><strong>${t('storage')}</strong>${n.disk}</div></div>` : ''}
+                    ${n.ekran ? `<div class="detail-spec"><i class="fas fa-desktop"></i><div class="detail-spec-matn"><strong>${t('screen')}</strong>${n.ekran}</div></div>` : ''}
+                    ${n.grafika ? `<div class="detail-spec"><i class="fas fa-tv"></i><div class="detail-spec-matn"><strong>${t('graphics')}</strong>${n.grafika}</div></div>` : ''}
+                </div>
+            </div>
+            ${n.tavsif ? `<p style="font-size:14px;color:var(--matn2);margin-bottom:20px;">${n.tavsif}</p>` : ''}
+            <div style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid var(--chegara);">
+                <div>
+                    <div class="narxi" id="somNarxi_${n.id}">
+                        ${Number(n.narxi).toLocaleString('uz-UZ')} <span style="font-size:13px;font-weight:500;">so'm</span>
+                    </div>
+                </div>
+                <button class="sotib-olish" style="padding:12px 28px;font-size:15px;" onclick="modalYop('detailModal');zakazBer(${n.id},'${n.nomi.replace(/'/g,"\\'")}')">
+                    <i class="fas fa-shopping-cart"></i> ${t('order_btn')}
+                </button>
+            </div>
+        `;
+        modalOch('detailModal');
+        // So'm kursini yuklash
+        somKursYukla(n.narxi, n.id); // narx so'mda
+    } catch(e) {}
+}
+ 
+// Narx to'g'ridan-to'g'ri so'mda - kurs kerak emas
+function somFormat(narx) {
+    return Number(narx).toLocaleString('uz-UZ') + " so'm";
+}
+
+function somKursYukla(narx, notebookId) {
+    var el = document.getElementById('somNarxi_' + notebookId);
+    if (el) {
+        el.innerHTML = Number(narx).toLocaleString('uz-UZ') + " so'm";
+    }
+}
+ 
+// Miqdor o'zgartirish
+function miqdorOzgartir(id, delta) {
+    var el = document.getElementById('miqdor_' + id);
+    if (!el) return;
+    var val = parseInt(el.textContent) + delta;
+    if (val < 1) val = 1;
+    if (val > 99) val = 99;
+    el.textContent = val;
+}
+ 
+// Zakaz berish modal
+function zakazMuvaffaqModalKo_rsat(mahsulot_nomi, miqdor) {
+    var fon = document.getElementById('zakazMuvaffaqFon');
+    if (fon) {
+        document.getElementById('zakazMahsulotNomi').textContent = mahsulot_nomi;
+        document.getElementById('zakazMiqdor').textContent = miqdor;
+        fon.style.display = 'flex';
+        setTimeout(function(){ fon.style.opacity = '1'; }, 10);
+    }
+}
+ 
+async function zakazBer(notebook_id, notebook_nomi) {
+    var userPanel = document.getElementById('userPanel');
+    if (userPanel.style.display === 'none') {
+        toastKo_rsat(t('login_required'), 'xato');
+        modalOch('authModal');
+        return;
+    }
+    // Miqdorni olish
+    var miqdorEl = document.getElementById('miqdor_' + notebook_id);
+    var miqdor = miqdorEl ? parseInt(miqdorEl.textContent) : 1;
+    
+    try {
+        const res = await fetch('/zakaz', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({notebook_id: notebook_id, miqdor: miqdor})
+        });
+        const data = await res.json();
+        if (data.muvaffaqiyat) {
+            // Barcha modallarni yopish
+            document.querySelectorAll('.modal-fon').forEach(function(m){ m.classList.remove('ochiq'); });
+            // Chiroyli muvaffaqiyat modali
+            zakazMuvaffaqModalKo_rsat(notebook_nomi || 'Mahsulot', miqdor);
+            // Miqdorni reset qilish
+            if (miqdorEl) miqdorEl.textContent = '1';
+        } else {
+            toastKo_rsat(data.xato, 'xato');
+        }
+    } catch(e) {
+        toastKo_rsat('Xatolik yuz berdi', 'xato');
+    }
+}
+ 
+// ===================== FILTR VA QIDIRUV =====================
+function brendFilter(brend) {
+    joriy_brend = brend;
+    joriy_kategoriya = '';
+    notebooklarYukla(brend, document.getElementById('qidiruvInput').value, '');
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('faol'));
+    document.getElementById('notebooklar').scrollIntoView({behavior: 'smooth', block: 'start'});
+}
+ 
+// Wi-Fi va boshqa kategoriyalar uchun filter
+function kategoriyaFilter(kategoriya) {
+    joriy_kategoriya = kategoriya;
+    joriy_brend = '';
+    notebooklarYukla('', document.getElementById('qidiruvInput').value, kategoriya);
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('faol'));
+    document.getElementById('notebooklar').scrollIntoView({behavior: 'smooth', block: 'start'});
+}
+ 
+function qidiruv() {
+    const q = document.getElementById('qidiruvInput').value;
+    notebooklarYukla(joriy_brend, q, joriy_kategoriya);
+}
+ 
+document.getElementById('qidiruvInput').addEventListener('keyup', function(e) {
+    if (e.key === 'Enter') qidiruv();
+    // Real vaqtda qidiruv
+    clearTimeout(this._timer);
+    this._timer = setTimeout(() => qidiruv(), 400);
+});
+ 
+function saralash(tur) {
+    let notebooklar = [...barcha_notebooklar];
+    if (tur === 'arzon') notebooklar.sort((a,b) => a.narxi - b.narxi);
+    else if (tur === 'qimmat') notebooklar.sort((a,b) => b.narxi - a.narxi);
+    notebooklarKo_rsat(notebooklar);
+}
+ 
+// ===================== TOAST =====================
+function toastKo_rsat(xabar, tur = 'muvaffaq') {
+    const toast = document.getElementById('toast');
+    toast.className = `toast ${tur}`;
+    toast.innerHTML = `<i class="fas fa-${tur === 'muvaffaq' ? 'check-circle' : 'exclamation-circle'}"></i> ${xabar}`;
+    setTimeout(() => toast.classList.add("ko'rinsin"), 50);
+    setTimeout(() => toast.classList.remove("ko'rinsin"), 4000);
+}
+ 
+// Zakaz muvaffaqiyat modalni yopish
+function zakazModalYop() {
+    var fon = document.getElementById('zakazMuvaffaqFon');
+    if (fon) {
+        fon.style.opacity = '0';
+        setTimeout(function(){ fon.style.display = 'none'; }, 300);
+    }
+}
+ 
+// Modal tashqarisiga bosganda yopish
+document.addEventListener('click', function(e) {
+    var fon = document.getElementById('zakazMuvaffaqFon');
+    if (fon && e.target === fon) zakazModalYop();
+});
+ 
+// ===================== SESSION TEKSHIRISH =====================
+async function sessionTekshir() {
+    // Flask session orqali user ma'lumoti olish
+    // Bu yerda biz sahifa yuklanganida Flask template'dan ma'lumot olamiz
+    const userDataEl = document.getElementById('userData');
+    if (userDataEl) {
+        const userData = JSON.parse(userDataEl.textContent);
+        if (userData.kirgan) {
+            document.getElementById('userPanel').style.display = 'flex';
+            document.getElementById('kirishBtn').style.display = 'none';
+            document.getElementById('userName').textContent = userData.ism;
+            document.getElementById('userAvatar').textContent = userData.ism[0].toUpperCase();
+        }
+    }
+}
+ 
+// ===================== ISHGA TUSHIRISH =====================
+document.addEventListener('DOMContentLoaded', async function() {
+    await sessionTekshir();
+    await notebooklarYukla();
+});
+</script>
+ 
+<!-- Server tomonidan user ma'lumoti -->
+<script id="userData" type="application/json">
+{
+    "kirgan": {{ 'true' if session.get('user_id') else 'false' }},
+    "ism": "{{ session.get('user_ism', '') }}",
+    "familya": "{{ session.get('user_familya', '') }}",
+    "telefon": "{{ session.get('user_telefon', '') }}"
+}
+</script>
+ 
+</body>
+</html>
