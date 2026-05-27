@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Notebook Laptops</title>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Exo 2', sans-serif; background: #F0F4FF; color: #1A1A2E; }
+
+        .admin-header {
+            background: linear-gradient(135deg, #0D47A1, #1565C0);
+            padding: 16px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+        .admin-header h1 { font-size: 22px; font-weight: 800; }
+        .admin-header span { font-size: 13px; opacity: 0.8; }
+        .back-btn {
+            background: rgba(255,255,255,0.15);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 8px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Exo 2', sans-serif;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .back-btn:hover { background: rgba(255,255,255,0.25); }
+
+        .admin-body { max-width: 1200px; margin: 30px auto; padding: 0 20px; display: grid; grid-template-columns: 380px 1fr; gap: 24px; }
+
+        /* Form panel */
+        .form-panel {
+            background: #fff;
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 4px 24px rgba(21,101,192,0.10);
+            border: 1px solid #E0E7FF;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+        .form-panel h2 { font-size: 18px; font-weight: 800; color: #0D47A1; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .form-guruh { margin-bottom: 14px; }
+        .form-label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px; color: #444; }
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 11px 14px;
+            border: 2px solid #E0E7FF;
+            border-radius: 10px;
+            font-size: 14px;
+            font-family: 'Exo 2', sans-serif;
+            background: #F8FAFF;
+            color: #1A1A2E;
+            outline: none;
+            transition: border .2s;
+        }
+        .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: #1565C0; background: #fff; }
+        .form-textarea { resize: vertical; min-height: 80px; }
+        .ikki-qator { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .rasm-upload {
+            border: 2px dashed #C5D5F5;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            background: #F8FAFF;
+            transition: all .2s;
+        }
+        .rasm-upload:hover { border-color: #1565C0; background: #EFF6FF; }
+        .rasm-upload i { font-size: 28px; color: #1565C0; margin-bottom: 8px; display: block; }
+        .rasm-upload span { font-size: 13px; color: #666; }
+        .rasm-preview { width: 100%; max-height: 140px; object-fit: contain; border-radius: 8px; margin-top: 10px; display: none; }
+        .qosh-btn {
+            width: 100%;
+            padding: 14px;
+            background: #1565C0;
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Exo 2', sans-serif;
+            transition: all .2s;
+            margin-top: 6px;
+        }
+        .qosh-btn:hover { background: #0D47A1; transform: translateY(-1px); }
+        .qosh-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+        /* Table panel */
+        .table-panel { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 4px 24px rgba(21,101,192,0.10); border: 1px solid #E0E7FF; }
+        .table-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+        .table-header h2 { font-size: 18px; font-weight: 800; color: #0D47A1; }
+        .son-badge {
+            background: #1565C0;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+        .notebook-jadval { width: 100%; border-collapse: collapse; }
+        .notebook-jadval th {
+            background: #EFF6FF;
+            padding: 12px 14px;
+            text-align: left;
+            font-size: 13px;
+            font-weight: 700;
+            color: #0D47A1;
+            border-bottom: 2px solid #DBEAFE;
+        }
+        .notebook-jadval td {
+            padding: 14px;
+            border-bottom: 1px solid #F0F4FF;
+            font-size: 14px;
+            vertical-align: middle;
+        }
+        .notebook-jadval tr:hover td { background: #F8FAFF; }
+        .notebook-jadval .rasm-kichik {
+            width: 50px;
+            height: 40px;
+            object-fit: contain;
+            border-radius: 6px;
+            background: #EFF6FF;
+            padding: 4px;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .narxi-badge {
+            background: #EFF6FF;
+            color: #1565C0;
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        .ochir-btn {
+            background: #FEE2E2;
+            color: #991B1B;
+            border: none;
+            padding: 7px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 600;
+            transition: all .2s;
+        }
+        .ochir-btn:hover { background: #FCA5A5; }
+
+        .yuklanyapti { text-align: center; padding: 40px; color: #999; }
+        .brend-chip {
+            background: #1565C0;
+            color: #fff;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            padding: 16px 24px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transform: translateX(120%);
+            transition: transform .3s;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        .toast.ko_rinsin { transform: translateX(0); }
+        .toast.muvaffaq { background: #d1fae5; color: #065f46; border: 1px solid #a7f3d0; }
+        .toast.xato { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+
+        @media (max-width: 900px) { .admin-body { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<div class="admin-header">
+    <div>
+        <h1>⚙️ Admin Panel</h1>
+        <span>Notebook Laptops boshqaruv paneli</span>
+    </div>
+    <a href="/" class="back-btn"><i class="fas fa-home"></i> Saytga qaytish</a>
+</div>
+
+<div class="admin-body">
+
+    <!-- NOTEBOOK QO'SHISH FORMASI -->
+    <div class="form-panel">
+        <h2><i class="fas fa-plus-circle" style="color:#1565C0;"></i> Yangi Notebook Qo'shish</h2>
+        
+        <form id="notebookForm" enctype="multipart/form-data">
+            
+            <!-- ===== KATEGORIYA TUGMALAR ===== -->
+            <div class="form-guruh">
+                <label class="form-label" style="display:block;margin-bottom:8px;font-weight:700;">Kategoriya *</label>
+                <div style="display:flex;gap:8px;">
+                    <button type="button" id="kat_notebook" 
+                        style="flex:1;padding:12px 8px;border:2px solid #1565C0;border-radius:10px;background:#EFF6FF;color:#1565C0;font-weight:700;font-size:13px;cursor:pointer;"
+                        onclick="katTanla('notebook')">💻 Notebook</button>
+                    <button type="button" id="kat_wifi"
+                        style="flex:1;padding:12px 8px;border:2px solid #ddd;border-radius:10px;background:#fff;color:#555;font-weight:700;font-size:13px;cursor:pointer;"
+                        onclick="katTanla('wifi')">📶 Wi-Fi</button>
+                    <button type="button" id="kat_aksessuarlar"
+                        style="flex:1;padding:12px 8px;border:2px solid #ddd;border-radius:10px;background:#fff;color:#555;font-weight:700;font-size:13px;cursor:pointer;"
+                        onclick="katTanla('aksessuarlar')">🎧 Aksessuarlar</button>
+                </div>
+                <input type="hidden" name="kategoriya" id="kategoriyaInput" value="notebook">
+            </div>
+
+            <!-- Rasm yuklash -->
+            <div class="form-guruh">
+                <label class="form-label">Notebook rasmi</label>
+                <div class="rasm-upload" onclick="document.getElementById('rasmInput').click()">
+                    <i class="fas fa-image"></i>
+                    <span>Rasm tanlash uchun bosing<br><small>JPG, PNG, WEBP (max 16MB)</small></span>
+                </div>
+                <input type="file" id="rasmInput" name="rasm" accept="image/*" style="display:none" onchange="rasmKo_rsat(this)">
+                <img id="rasmPreview" class="rasm-preview" alt="Preview">
+            </div>
+
+            <div class="ikki-qator">
+                <div class="form-guruh">
+                    <label class="form-label">Brend *</label>
+                    <select class="form-select" name="brend" required>
+                        <option value="">Tanlang</option>
+                        <option value="HP">HP</option>
+                        <option value="Dell">Dell</option>
+                        <option value="ASUS">ASUS</option>
+                        <option value="Lenovo">Lenovo</option>
+                        <option value="Acer">Acer</option>
+                        <option value="MSI">MSI</option>
+                        <option value="Samsung">Samsung</option>
+                        <option value="Apple">Apple</option>
+                        <option value="Huawei">Huawei</option>
+                        <option value="TP-Link">TP-Link</option>
+                        <option value="Boshqa">Boshqa</option>
+                    </select>
+                </div>
+                <div class="form-guruh">
+                    <label class="form-label">Narxi (so'mda) *</label>
+                    <input class="form-input" type="number" name="narxi" placeholder="8 500 000" min="0" required>
+                </div>
+            </div>
+
+            <div class="form-guruh">
+                <label class="form-label">Model nomi *</label>
+                <input class="form-input" type="text" name="nomi" placeholder="HP Pavilion 15-eg2000" required>
+            </div>
+
+            <div class="form-guruh">
+                <label class="form-label">Protsessor</label>
+                <input class="form-input" type="text" name="protsessor" placeholder="Intel Core i5-1235U / AMD Ryzen 5">
+            </div>
+
+            <div class="ikki-qator">
+                <div class="form-guruh">
+                    <label class="form-label">RAM (Xotira)</label>
+                    <select class="form-select" name="ram">
+                        <option value="">Tanlang</option>
+                        <option value="4GB DDR4">4GB DDR4</option>
+                        <option value="8GB DDR4">8GB DDR4</option>
+                        <option value="8GB DDR5">8GB DDR5</option>
+                        <option value="16GB DDR4">16GB DDR4</option>
+                        <option value="16GB DDR5">16GB DDR5</option>
+                        <option value="32GB DDR5">32GB DDR5</option>
+                        <option value="64GB DDR5">64GB DDR5</option>
+                    </select>
+                </div>
+                <div class="form-guruh">
+                    <label class="form-label">Disk (SSD/HDD)</label>
+                    <select class="form-select" name="disk">
+                        <option value="">Tanlang</option>
+                        <option value="256GB SSD">256GB SSD</option>
+                        <option value="512GB NVMe SSD">512GB NVMe SSD</option>
+                        <option value="1TB NVMe SSD">1TB NVMe SSD</option>
+                        <option value="2TB SSD">2TB SSD</option>
+                        <option value="1TB HDD + 256GB SSD">1TB HDD + 256GB SSD</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="ikki-qator">
+                <div class="form-guruh">
+                    <label class="form-label">Ekran</label>
+                    <select class="form-select" name="ekran">
+                        <option value="">Tanlang</option>
+                        <option value='13.3" FHD IPS'>13.3" FHD IPS</option>
+                        <option value='14" FHD IPS'>14" FHD IPS</option>
+                        <option value='15.6" FHD IPS'>15.6" FHD IPS</option>
+                        <option value='15.6" FHD 144Hz'>15.6" FHD 144Hz</option>
+                        <option value='16" QHD 165Hz'>16" QHD 165Hz</option>
+                        <option value='17.3" FHD 144Hz'>17.3" FHD 144Hz</option>
+                    </select>
+                </div>
+                <div class="form-guruh">
+                    <label class="form-label">Grafika kartasi</label>
+                    <input class="form-input" type="text" name="grafika" placeholder="RTX 3050 / Intel Iris Xe">
+                </div>
+            </div>
+
+            <div class="form-guruh">
+                <label class="form-label">Qo'shimcha tavsif</label>
+                <textarea class="form-textarea" name="tavsif" placeholder="Notebook haqida qo'shimcha ma'lumot..."></textarea>
+            </div>
+
+            <button type="button" class="qosh-btn" onclick="notebookQosh()" id="qoshBtn">
+                <i class="fas fa-plus"></i> Saytga Qo'shish
+            </button>
+        </form>
+    </div>
+
+    <!-- NOTEBOOKLAR RO'YXATI -->
+    <div class="table-panel">
+        <div class="table-header">
+            <h2><i class="fas fa-list" style="color:#1565C0;margin-right:8px;"></i>Barcha Notebooklar</h2>
+            <span class="son-badge" id="sonBadge">Yuklanmoqda...</span>
+        </div>
+        <div style="overflow-x:auto;">
+            <table class="notebook-jadval">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Rasm</th>
+                        <th>Brend</th>
+                        <th>Model</th>
+                        <th>Protsessor</th>
+                        <th>RAM</th>
+                        <th>Narxi</th>
+                        <th>Amal</th>
+                    </tr>
+                </thead>
+                <tbody id="notebookTableBody">
+                    <tr><td colspan="8" class="yuklanyapti">Yuklanmoqda...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ===== KATEGORIYA TUGMA FUNKSIYASI =====
+function katTanla(kat) {
+    // Barcha tugmalarni reset qilish
+    var tugmalar = ['notebook', 'wifi', 'aksessuarlar'];
+    tugmalar.forEach(function(k) {
+        var btn = document.getElementById('kat_' + k);
+        if (btn) {
+            btn.style.borderColor = '#ddd';
+            btn.style.background = '#fff';
+            btn.style.color = '#555';
+        }
+    });
+    // Tanlangan tugmani faollashtirish
+    var active = document.getElementById('kat_' + kat);
+    if (active) {
+        active.style.borderColor = '#1565C0';
+        active.style.background = '#EFF6FF';
+        active.style.color = '#1565C0';
+    }
+    // Hidden input ga qiymat berish
+    document.getElementById('kategoriyaInput').value = kat;
+}
+
+function rasmKo_rsat(input) {
+    const preview = document.getElementById('rasmPreview');
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = e => {
+            preview.src = e.target.result;
+            preview.style.display = 'block';
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+async function notebookQosh() {
+    const btn = document.getElementById('qoshBtn');
+    
+    // Majburiy maydonlarni tekshirish
+    const nomi = document.querySelector('[name="nomi"]').value.trim();
+    const brend = document.querySelector('[name="brend"]').value.trim();
+    const narxi = document.querySelector('[name="narxi"]').value.trim();
+    
+    if (!nomi) { toastKo_rsat('❌ Model nomini kiriting!', 'xato'); return; }
+    if (!brend) { toastKo_rsat('❌ Brendni tanlang!', 'xato'); return; }
+    if (!narxi) { toastKo_rsat('❌ Narxni kiriting!', 'xato'); return; }
+    
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Qo\'shilmoqda...';
+    
+    const form = document.getElementById('notebookForm');
+    const formData = new FormData(form);
+    
+    try {
+        const res = await fetch('/admin/notebook-qosh', {
+            method: 'POST',
+            body: formData
+        });
+        
+        if (!res.ok) {
+            throw new Error(`Server xatosi: ${res.status}`);
+        }
+        
+        const data = await res.json();
+        
+        if (data.muvaffaqiyat) {
+            toastKo_rsat('✅ Notebook muvaffaqiyatli qo\'shildi!', 'muvaffaq');
+            form.reset();
+            document.getElementById('rasmPreview').style.display = 'none';
+            yuklaNota();
+        } else {
+            toastKo_rsat('❌ ' + (data.xato || 'Xatolik yuz berdi'), 'xato');
+        }
+    } catch(e) {
+        console.error('Xato:', e);
+        toastKo_rsat('❌ ' + e.message, 'xato');
+    } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-plus"></i> Saytga Qo\'shish';
+    }
+}
+
+async function yuklaNota() {
+    try {
+        const res = await fetch('/api/notebooklar');
+        const notebooklar = await res.json();
+        
+        document.getElementById('sonBadge').textContent = `${notebooklar.length} ta notebook`;
+        
+        const tbody = document.getElementById('notebookTableBody');
+        if (notebooklar.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="8" class="yuklanyapti">Hali notebook qo\'shilmagan</td></tr>';
+            return;
+        }
+        
+        tbody.innerHTML = notebooklar.map((n, i) => `
+            <tr>
+                <td><strong>${i+1}</strong></td>
+                <td>
+                    <div class="rasm-kichik">
+                        ${n.rasm && n.rasm !== 'default.jpg' && n.rasm !== '' 
+                            ? `<img src="/static/uploads/${n.rasm}" style="width:50px;height:40px;object-fit:contain;" alt="">` 
+                            : '💻'}
+                    </div>
+                </td>
+                <td><span class="brend-chip">${n.brend}</span></td>
+                <td style="max-width:200px;font-weight:600;">${n.nomi}</td>
+                <td style="color:#666;font-size:12px;">${n.protsessor || '-'}</td>
+                <td style="color:#666;font-size:12px;">${n.ram || '-'}</td>
+                <td><span class="narxi-badge">${Number(n.narxi).toLocaleString('uz-UZ')} so'm</span></td>
+                <td>
+                    <button class="ochir-btn" onclick="notebookOchir(${n.id})">
+                        <i class="fas fa-trash"></i> O'chirish
+                    </button>
+                </td>
+            </tr>
+        `).join('');
+    } catch(e) {
+        document.getElementById('notebookTableBody').innerHTML = '<tr><td colspan="8" class="yuklanyapti">Yuklanishda xatolik</td></tr>';
+    }
+}
+
+async function notebookOchir(id) {
+    if (!confirm("Bu notebookni o'chirishni tasdiqlaysizmi?")) return;
+    
+    try {
+        const res = await fetch(`/admin/notebook-ochir/${id}`, { method: 'DELETE' });
+        const data = await res.json();
+        if (data.muvaffaqiyat) {
+            toastKo_rsat('✅ Notebook o\'chirildi', 'muvaffaq');
+            yuklaNota();
+        }
+    } catch(e) {
+        toastKo_rsat('Xatolik yuz berdi', 'xato');
+    }
+}
+
+function toastKo_rsat(xabar, tur) {
+    const toast = document.getElementById('toast');
+    toast.className = `toast ${tur}`;
+    toast.innerHTML = xabar;
+    setTimeout(() => toast.classList.add('ko_rinsin'), 50);
+    setTimeout(() => toast.classList.remove('ko_rinsin'), 4000);
+}
+
+document.addEventListener('DOMContentLoaded', yuklaNota);
+</script>
+</body>
+</html>
