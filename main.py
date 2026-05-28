@@ -13,7 +13,10 @@ from datetime import datetime
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'notebook-laptops-secret-key-2024'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///notebooks.db'
+if os.environ.get('VERCEL'):
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/notebooks.db'
+else:
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///notebooks.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static', 'uploads')
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max
