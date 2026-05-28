@@ -364,3 +364,4 @@ if __name__ == '__main__':
     import logging
     logging.getLogger('werkzeug').setLevel(logging.ERROR)
     app.run(debug=False, port=5000)
+app = app
